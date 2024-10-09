@@ -1,4 +1,4 @@
-{{/* 20, 100, 250, and 500 height */}}
+{{/* 30, 480, and 720 height */}}
 {{ $full := . }}
 {{ with site.Params.gallerydeluxe.watermark }}
   {{ $opts := . }}
@@ -35,10 +35,9 @@
 {{ end }}
 {{ $m := dict
   "full" $full
-  "20"  (.Resize "x20")
-  "100" (.Resize "x100")
-  "250" (.Resize "x250")
-  "500" (.Resize "x500")
+  "30"  (.Fit "30x30")
+  "360" (.Fit "480x480")
+  "640" (.Fit "720x720")
 }}
 
 {{ return $m }}

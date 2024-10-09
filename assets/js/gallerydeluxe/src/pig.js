@@ -273,12 +273,12 @@ export function Pig(imageData, options) {
 
 		/**
 		 * Type: Number
-		 * Default: 20
+		 * Default: 30
 		 * Description: The height in pixels of the thumbnail that should be
 		 *   loaded and blurred to give the effect that images are loading out of
 		 *   focus and then coming into focus.
 		 */
-		thumbnailSize: 20,
+		thumbnailSize: 30,
 
 		/**
 		 * Get the URL for an image with the given filename & size.
@@ -347,11 +347,11 @@ export function Pig(imageData, options) {
 		 */
 		getImageSize: function (lastWindowWidth) {
 			if (lastWindowWidth <= 640) {
-				return 100;
+				return 360;
 			} else if (lastWindowWidth <= 1920) {
-				return 250;
+				return 640;
 			}
-			return 500;
+			return 640;
 		},
 	};
 

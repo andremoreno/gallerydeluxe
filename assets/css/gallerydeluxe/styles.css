@@ -1,8 +1,3 @@
-.gd-figure:hover {
-  filter: brightness(1.25);
-  cursor: pointer;
-}
-
 .gd-modal-target {
   width: 300px;
   border-radius: 5px;
@@ -101,7 +96,7 @@
   z-index: 20;
   top: 0px;
   right: 10px;
-  color: #8a8a8a;
+  color: #fff;
   font-size: 40px;
   font-weight: bold;
   transition: 0.3s;

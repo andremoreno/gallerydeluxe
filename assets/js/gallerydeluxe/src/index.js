@@ -4,6 +4,8 @@ import * as params from '@params';
 import { Pig } from './pig';
 import { newSwiper } from './helpers';
 
+
+
 var debug = 0 ? console.log.bind(console, '[gallery-deluxe]') : function () {};
 
 let GalleryDeluxe = {
@@ -36,6 +38,43 @@ let GalleryDeluxe = {
 		let imageWrapper = document.createElement('div');
 		imageWrapper.classList.add('gd-modal-content-wrapper');
 		modal.insertBefore(imageWrapper, modal.firstChild);
+
+
+		    if (params.enable_click_navigation) {
+        
+      // Add left and right navigation buttons.
+      let leftNav = document.createElement('div');
+      leftNav.classList.add('gd-modal-nav-left');
+      leftNav.innerHTML = '&lt;';
+      leftNav.style.position = 'absolute';
+      leftNav.style.top = '50%';
+      leftNav.style.left = '5%';
+      leftNav.style.transform = 'translateY(-50%)';
+      leftNav.style.cursor = 'pointer';
+      leftNav.style.fontSize = '3em';
+      leftNav.style.fontWeight = 'bold';
+      leftNav.addEventListener('click', function () {
+        swipe('right');
+      });
+      modal.appendChild(leftNav);
+
+      let rightNav = document.createElement('div');
+      rightNav.classList.add('gd-modal-nav-right');
+      rightNav.innerHTML = '&gt;';
+      rightNav.style.position = 'absolute';
+      rightNav.style.top = '50%';
+      rightNav.style.right = '5%';
+      rightNav.style.transform = 'translateY(-50%)';
+      rightNav.style.cursor = 'pointer';
+      rightNav.style.fontSize = '3em';
+      rightNav.style.fontWeight = 'bold';
+      rightNav.addEventListener('click', function () {
+        swipe('left');
+      });
+      modal.appendChild(rightNav);
+    
+    }
+
 
 		const closeModal = (e) => {
 			if (e) {
@@ -169,7 +208,7 @@ let GalleryDeluxe = {
 				thumbnail.classList.add(classThumbnail);
 
 				fullImage.src = activeImage.full;
-				thumbnail.src = activeImage['20'];
+				thumbnail.src = activeImage['30'];
 
 				thumbnail.onload = function () {
 					if (thumbnail) {
@@ -241,7 +280,7 @@ let GalleryDeluxe = {
 				}
 				let colors = image.colors;
 				let first = colors[0];
-				let second = '#ccc';
+				let second = '#fff';
 				// Some images have only one dominant color.
 				if (colors.length > 1) {
 					second = colors[1];
